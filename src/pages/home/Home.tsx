@@ -1,6 +1,6 @@
 // import React from "react";
 
-let Home = () => {
+const Home = () => {
     return (
         <>
             <section style={{
