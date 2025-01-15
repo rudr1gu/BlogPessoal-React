@@ -3,7 +3,7 @@
 const Home = () => {
     return (
         <>
-            <section className="bg-gray-100 max-w-full flex flex-col">
+            <section className="bg-gray-100 w-screen flex flex-col">
                 <div>
                     <div className="max-w-7xl flex flex-col items-center mx-auto px-4 sm:px-6 lg:px-8">
                         <h2> Seja Bem-vindo(a)</h2>
