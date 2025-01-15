@@ -1,16 +1,33 @@
+import './Navbar.css';
+
 const Navbar = () => {
     return (
         <>
-            <nav className="w-full flex justify-center py-4 bg-indigo-900 text-white">
+            <nav className="w-full flex justify-center py-4 bg-sky-700 text-white">
                 <div className="container flex justify-between text-lg">
-                    <h1>Blog Pessoal</h1>
+                    <h1>Blog Pessoal - Rudr1gu <i className='bx bx-code-alt'></i></h1>
                     <div>
-                        <ul className="flex gap-4">
-                            <li><a href="#">Postagens</a></li>
-                            <li><a href="#">Temas</a></li>
-                            <li><a href="#">Cadastrar Tema</a></li>
-                            <li><a href="#">Perfil</a></li>
-                            <li><a href="#">Sair</a></li>
+                        <ul className="flex gap-5">
+                            <li><a href="#" className="links-nav">
+                                    <i className='bx bxs-notepad'></i> Postagens
+                                </a>
+                            </li>
+                            <li><a href="#" className="links-nav ">
+                                    <i className='bx bxs-comment-detail'></i> Temas
+                                </a>
+                            </li>
+                            <li><a href="#" className="links-nav ">
+                                    <i className='bx bxs-comment-add'></i> Cadastrar Tema
+                            </a>
+                            </li>
+                            <li><a href="#" className="links-nav ">
+                                    <i className='bx bxs-user-rectangle' ></i> Perfil
+                                </a>
+                            </li>
+                            <li><a href="#" className="links-nav logout">
+                                    <i className='bx bxs-log-out-circle'></i> Sair
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
