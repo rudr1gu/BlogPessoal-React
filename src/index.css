@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100vw;
+    min-height: 100vh;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #f9f9f9;
+}
+
+
+input{
+    @apply border-2 border-slate-700 rounded-md p-2;
+}
+
+.input {
+    position: relative;
+    margin: 10px 0;
+    input {
+        transition: all 0.3s ease-in-out;
+    }
+    label{
+        margin-left: 10px;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    input:focus {
+        border: 1px solid #80808048;
+        outline: none;
+    }
+
+    input:focus + label,
+    input:valid + label {
+    top: -21px;
+    font-size: 14px;
+    color: var(--gray-color);
+    }
+}
