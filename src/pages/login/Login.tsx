@@ -1,9 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { useContext } from 'react';
-import { UserContext } from '../../context/UserContext';
+import { UserContext } from '../../contexts/UserContext';
 
-const Login = () => {
+const Login = () =>{
     const { nome, trocarNome } = useContext(UserContext);
     let navigate = useNavigate();
 
@@ -24,7 +24,9 @@ const Login = () => {
                             type="text"
                             id="usuario"
                             name="usuario"
+                            value={nome}
                             required
+                            onChange={(event) => trocarNome(event.target.value)}
                         />
                         <label htmlFor="usuario"><i className='bx bxs-id-card'></i> Usuário</label>
                     </div>
