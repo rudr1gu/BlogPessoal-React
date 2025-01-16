@@ -13,7 +13,6 @@ const Cadastrar = () => {
                             type="text"
                             id="nome"
                             name="nome"
-                            className="border-2 border-slate-700 rounded-md p-2"
                             required
                         />
                         <label htmlFor="nome"><i className='bx bxs-user-circle'></i> Nome</label>
@@ -23,7 +22,6 @@ const Cadastrar = () => {
                             type="text"
                             id="usuario"
                             name="usuario"
-                            className="border-2 border-slate-700 rounded-md p-2"
                             required
                         />
                         <label htmlFor="usuario"><i className='bx bxs-id-card'></i> Usuario</label>
@@ -33,7 +31,6 @@ const Cadastrar = () => {
                             type="text"
                             id="foto"
                             name="foto"
-                            className="border-2 border-slate-700 rounded-md p-2"
                             required
                         />
                         <label htmlFor="foto"><i className='bx bxs-image-add'></i> Foto</label>
@@ -43,7 +40,6 @@ const Cadastrar = () => {
                             type="password"
                             id="senha"
                             name="senha"
-                            className="border-2 border-slate-700 rounded-md p-2"
                             required
                         />
                         <label htmlFor="senha"><i className='bx bx-key' ></i> Senha</label>
@@ -53,7 +49,6 @@ const Cadastrar = () => {
                             type="password"
                             id="confirmarSenha"
                             name="confirmarSenha"
-                            className="border-2 border-slate-700 rounded-md p-2 shadow-md"
                             required
                         />
                         <label htmlFor="confirmarSenha"> <i className='bx bx-key' ></i> Confirmar Senha</label>
