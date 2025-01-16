@@ -1,20 +1,29 @@
-import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './pages/home/Home';
+import './App.css'
+import Footer from './components/footer/Footer';
+import Navbar from './components/navbar/Navbar';
+import Home from './pages/home/Home'
+import Cadastro from './pages/cadastar/Cadastro';
 import Login from './pages/login/Login';
-import { UserProvider } from './contexts/UserContext';
 
-const App = () => {
+function App() {
   return (
-    <UserProvider>
+    <>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-        </Routes>
+
+        <Navbar />
+        <main className="min-h-[80vh]">
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/cadastro' element={<Cadastro />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
+        </main>
+        <Footer />
       </BrowserRouter>
-    </UserProvider>
+    </>
+
   );
 }
 
