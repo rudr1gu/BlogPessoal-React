@@ -1,7 +1,19 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
+import { AuthContext } from '../../contexts/AuthContext';
+import { useContext } from 'react';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+
+    const { handleLogout } = useContext(AuthContext);
+
+    const logout = () => {
+        handleLogout();
+        alert('O Usuário foi deslogado com sucesso!');
+        navigate('/');
+    }
+
     return (
         <>
             <nav className="w-full flex justify-center py-4 bg-sky-700 text-white">
@@ -25,9 +37,9 @@ const Navbar = () => {
                                     <i className='bx bxs-user-rectangle' ></i> Perfil
                                 </a>
                             </li>
-                            <li><a href="#" className="links-nav logout">
+                            <li><Link to='' onClick={logout} className="links-nav logout">
                                     <i className='bx bxs-log-out-circle'></i> Sair
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
