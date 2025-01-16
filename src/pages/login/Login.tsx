@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
@@ -13,7 +14,7 @@ const Login = () => {
                             name="usuario"
                             required
                         />
-                        <label htmlFor="usuario">Usuário</label>
+                        <label htmlFor="usuario"><i className='bx bxs-id-card'></i> Usuário</label>
                     </div>
                     <div className="flex flex-col w-full input">
                         <input
@@ -22,7 +23,7 @@ const Login = () => {
                             name="senha"
                             required
                         />
-                        <label htmlFor="senha">Senha</label>
+                        <label htmlFor="senha"><i className='bx bx-key' ></i> Senha</label>
                     </div>
                     <button
                         type='submit'
@@ -35,7 +36,7 @@ const Login = () => {
 
                     <p>
                         Ainda não tem uma conta?{' '}
-                        Cadastre-se
+                        <Link to="/cadastro" className='text-sky-500 hover:text-sky-900' >Cadastre-se</Link>
                     </p>
                 </form>
                 <div className="fundoLogin hidden lg:block"></div>
