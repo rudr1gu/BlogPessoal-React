@@ -1,11 +1,23 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 const Login = () => {
+    const { nome, trocarNome } = useContext(UserContext);
+    let navigate = useNavigate();
+
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        navigate('/home');
+    }
+
+    
+
     return (
         <>
             <section className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
-                <form className="flex justify-center items-center flex-col w-1/2 gap-4" >
+                <form className="flex justify-center items-center flex-col w-1/2 gap-4" onSubmit={handleSubmit}>
                     <h2 className="text-slate-900 text-5xl ">Entrar</h2>
                     <div className="flex flex-col w-full input">
                         <input
