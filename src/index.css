@@ -18,19 +18,33 @@ body{
     background-color: #f9f9f9;
 }
 
-h2{
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 1rem;
-}
-
-p{
-    font-size: 1rem;
-    color: white;
-    margin-bottom: 1rem;
-}
 
 input{
     @apply border-2 border-slate-700 rounded-md p-2;
+}
+
+.input {
+    position: relative;
+    margin: 10px 0;
+    input {
+        transition: all 0.3s ease-in-out;
+    }
+    label{
+        margin-left: 10px;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    input:focus {
+        border: 1px solid #80808048;
+        outline: none;
+    }
+
+    input:focus + label,
+    input:valid + label {
+    top: -21px;
+    font-size: 14px;
+    color: var(--gray-color);
+    }
 }

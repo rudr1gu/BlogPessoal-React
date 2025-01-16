@@ -3,7 +3,7 @@
 const Home = () => {
     return (
         <>
-            <div className="bg-sky-700 flex justify-center">
+            <section className="bg-sky-700 flex justify-center h-full" >
                 <div className='container grid grid-cols-2 text-white'>
                     <div className="flex flex-col gap-4 items-center justify-center py-4">
                         <h2 className='text-5xl font-bold text-white'>
@@ -30,7 +30,7 @@ const Home = () => {
                         />
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 };
