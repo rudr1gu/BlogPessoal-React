@@ -29,9 +29,9 @@ const Navbar = () => {
                                     <i className='bx bxs-comment-detail'></i> Temas
                                 </Link>
                             </li>
-                            <li><a href="#" className="links-nav ">
+                            <li><Link to="cadastrartema" className="links-nav ">
                                     <i className='bx bxs-comment-add'></i> Cadastrar Tema
-                            </a>
+                            </Link>
                             </li>
                             <li><a href="#" className="links-nav ">
                                     <i className='bx bxs-user-rectangle' ></i> Perfil
