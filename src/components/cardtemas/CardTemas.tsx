@@ -13,12 +13,12 @@ const CardTemas = () => {
                 <Link to=''
                     className='w-full text-slate-100 bg-sky-400 hover:bg-sky-800 
                         flex items-center justify-center py-2'>
-                    <button>Editar</button>
+                    <button><i className='bx bxs-edit'></i> Editar</button>
                 </Link>
 
                 <Link to='' className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
                     flex items-center justify-center'>
-                    <button>Deletar</button>
+                    <button><i className='bx bx-trash' ></i> Deletar</button>
                 </Link>
             </div>
 
