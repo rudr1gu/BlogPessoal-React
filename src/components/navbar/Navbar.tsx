@@ -25,9 +25,9 @@ const Navbar = () => {
                                     <i className='bx bxs-notepad'></i> Postagens
                                 </a>
                             </li>
-                            <li><a href="#" className="links-nav ">
+                            <li><Link to="/tema" className="links-nav ">
                                     <i className='bx bxs-comment-detail'></i> Temas
-                                </a>
+                                </Link>
                             </li>
                             <li><a href="#" className="links-nav ">
                                     <i className='bx bxs-comment-add'></i> Cadastrar Tema

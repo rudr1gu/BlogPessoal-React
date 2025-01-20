@@ -6,7 +6,7 @@ import Home from './pages/home/Home'
 import Cadastro from './pages/cadastro/Cadastro';
 import Login from './pages/login/Login';
 import { AuthProvider } from './contexts/AuthContext';
-import ListaTemas from './components/listatemas/ListaTemas';
+import ListaTemas from './components/temas/listatemas/ListaTemas';
 
 function App() {
   return (

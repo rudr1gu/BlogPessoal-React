@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import CardTemas from "../cardtemas/CardTemas"
 import { useContext, useEffect, useState } from "react";
-import Tema from "../../models/Tema";
-import { AuthContext } from "../../contexts/AuthContext";
-import TemaService from "../../services/TemaService";
+import Tema from "../../../models/Tema";
+import { AuthContext } from "../../../contexts/AuthContext";
+import TemaService from "../../../services/TemaService";
 import { DNA } from "react-loader-spinner";
 
 const ListaTemas = () => {
