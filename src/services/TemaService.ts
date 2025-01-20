@@ -13,8 +13,8 @@ class TemaService {
     }
 
     atualizarTema = async (url: string, dados: Object, setDados: Function, header: Object) => {
-        const resposta = await baseApi.put(url, dados, header);
-        setDados(resposta.data);
+        const resposta = await baseApi.put(url, dados, header)
+        setDados(resposta.data)
     }
 }
 
