@@ -1,4 +1,78 @@
+import { useState, useContext, useEffect } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+import { AuthContext } from "../../../contexts/AuthContext"
+import Tema from "../../../models/Tema"
+import { RotatingLines } from "react-loader-spinner"
+import TemaService from "../../../services/TemaService"
+
 const DeletarTema = () => {
+
+    const navigate = useNavigate()
+    const temaService = new TemaService()
+
+    const [tema, setTema] = useState<Tema>({} as Tema)
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+    
+    const { usuario, handleLogout } = useContext(AuthContext)
+    const token = usuario.token
+
+    const { id } = useParams<{ id: string }>()
+
+    async function buscarPorId(id: string) {
+        try {
+            await temaService.buscarTemas(`/temas/${id}`, setTema, {
+                headers: {
+                    'Authorization': token
+                }
+            })
+        } catch (error: any) {
+            if (error.toString().includes('403')) {
+                handleLogout()
+            }
+        }
+    }
+
+    useEffect(() => {
+        if (token === '') {
+            alert('Você precisa estar logado')
+            navigate('/')
+        }
+    }, [token])
+
+    useEffect(() => {
+        if (id !== undefined) {
+            buscarPorId(id)
+        }
+    }, [id])
+
+    async function deletarTema() {
+        setIsLoading(true)
+
+        try {
+            await temaService.delatarTema(`/temas/${id}`, {
+                headers: {
+                    'Authorization': token
+                }
+            })
+
+            alert('Tema apagado com sucesso')
+
+        } catch (error: any) {
+            if (error.toString().includes('403')) {
+                handleLogout()
+            }else {
+                alert('Erro ao deletar o tema.')
+            }
+        }
+
+        setIsLoading(false)
+        retornar()
+    }
+
+    function retornar() {
+        navigate("/temas")
+    }
+    
     return (
         <section className='container w-1/3 mx-auto'>
             <h1 className='text-4xl text-center my-4'>Deletar tema</h1>
@@ -9,16 +83,27 @@ const DeletarTema = () => {
                     className='py-2 px-6 bg-sky-600 text-white font-bold text-2xl'>
                     Tema
                 </header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>tema</p>
+                <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p>
                 <div className="flex">
                     <button 
-                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'>
+                        className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
+                        onClick={retornar}>
                         Não
                     </button>
                     <button 
                         className='w-full text-slate-100 bg-sky-400 
-                                   hover:bg-sky-600 flex items-center justify-center'>
-                        Sim
+                                   hover:bg-sky-600 flex items-center justify-center'
+                                   onClick={deletarTema}>
+                        {isLoading ?
+                            <RotatingLines
+                                strokeColor="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="24"
+                                visible={true}
+                            /> :
+                            <span>Sim</span>
+                        }
                     </button>
                 </div>
             </div>

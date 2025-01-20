@@ -16,6 +16,10 @@ class TemaService {
         const resposta = await baseApi.put(url, dados, header)
         setDados(resposta.data)
     }
+
+    delatarTema = async (url: string, header: Object) => {
+        await baseApi.delete(url, header)
+    }
 }
 
 export default TemaService;
