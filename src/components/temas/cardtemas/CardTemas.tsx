@@ -21,7 +21,7 @@ const CardTemas = ({ tema }: CardTemasProps) => {
                     <button><i className='bx bxs-edit'></i> Editar</button>
                 </Link>
 
-                <Link to='' className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
+                <Link to={`/deletartema/${tema.id}`} className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
                     flex items-center justify-center'>
                     <button><i className='bx bx-trash' ></i> Deletar</button>
                 </Link>
