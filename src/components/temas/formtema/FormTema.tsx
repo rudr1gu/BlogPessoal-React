@@ -21,7 +21,7 @@ function FormTema() {
 
     async function buscarPorId(id: string) {
         try {
-            await temaService.buscarTemas(`/temas/${id}`, setTema, {
+            await temaService.buscarTemas(`/temas/{id}?id=${id}`, setTema, {
                 headers: { Authorization: token }
             })
         } catch (error: any) {
@@ -61,7 +61,7 @@ function FormTema() {
 
         if (id !== undefined) {
             try {
-                await temaService.atualizarTema(`/temas`, tema, setTema, {
+                await temaService.atualizarTema(tema, setTema, {
                     headers: { 'Authorization': token }
                 })
                 alert('O Tema foi atualizado com sucesso!')

@@ -1,3 +1,4 @@
+import Tema from "../models/Tema";
 import baseApi from "./api";
 
 class TemaService {
@@ -12,8 +13,8 @@ class TemaService {
         setDados(resposta.data);
     }
 
-    atualizarTema = async (url: string, dados: Object, setDados: Function, header: Object) => {
-        const resposta = await baseApi.put(url, dados, header)
+    atualizarTema = async (tema: Tema, setDados: Function, header: Object) => {
+        const resposta = await baseApi.put('/temas', tema, header)
         setDados(resposta.data)
     }
 
