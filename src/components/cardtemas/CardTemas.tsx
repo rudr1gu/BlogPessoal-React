@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
+import Tema from "../../models/Tema";
 
-const CardTemas = () => {
+interface CardTemasProps {
+    tema: Tema;
+}
+
+const CardTemas = ({ tema }: CardTemasProps) => {
     return (
 
-        <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
+        <section className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
             <header className='py-2 px-6 bg-sky-800 text-white font-bold text-2xl'>
                 Tema
             </header>
-            <p className='p-8 text-3xl bg-slate-200 h-full'>Descrição</p>
+            <p className='p-8 text-3xl bg-slate-200 h-full'>{tema.descricao}</p>
 
             <div className="flex">
                 <Link to=''
@@ -21,8 +26,7 @@ const CardTemas = () => {
                     <button><i className='bx bx-trash' ></i> Deletar</button>
                 </Link>
             </div>
-
-        </div>
+        </section>
 
     )
 }
