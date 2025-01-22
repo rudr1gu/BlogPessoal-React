@@ -1,4 +1,4 @@
-// import React from "react";
+import ListaPostagens from "../../components/postagens/listapostagens/ListaPostagens"
 
 const Home = () => {
     return (
@@ -31,6 +31,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <ListaPostagens />
         </>
     );
 };
