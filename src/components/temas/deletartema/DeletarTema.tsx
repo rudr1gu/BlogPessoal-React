@@ -20,7 +20,7 @@ const DeletarTema = () => {
 
     async function buscarPorId(id: string) {
         try {
-            await temaService.buscarTemas(`/temas/${id}`, setTema, {
+            await temaService.buscarTemas(`/temas/{id}?id=${id}`, setTema, {
                 headers: {
                     'Authorization': token
                 }
