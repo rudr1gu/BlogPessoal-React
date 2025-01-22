@@ -131,7 +131,7 @@ const FormPostagem = () => {
                 if (error.toString().includes('403')) {
                     handleLogout()
                 } else {
-                    alert('Erro ao cadastrar a Postagem');
+                    alert('Erro ao cadastrar a Postagem' + error);
                 }
             }
         }
