@@ -49,7 +49,7 @@ const DeletarTema = () => {
         setIsLoading(true)
 
         try {
-            await temaService.delatarTema(`/temas/${id}`, {
+            await temaService.deletarTema(`/temas/${id}`, {
                 headers: {
                     'Authorization': token
                 }
