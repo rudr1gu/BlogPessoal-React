@@ -32,7 +32,7 @@ const ListaTemas = () => {
 
     useEffect(() => {
         if (token === '') {
-            handleLogout();
+            alert('Você precisa estar logado')
             navigate('/');
         }
     }, [token]);
