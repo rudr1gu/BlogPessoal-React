@@ -16,7 +16,7 @@ const ListaPostagens = () => {
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
 
-    async function buscarPostagens() {
+    const buscarPostagens =  async() =>{
         try {
             await postagemServices.buscarPostagens('/postagens', setPostagens, {
                 headers: {
