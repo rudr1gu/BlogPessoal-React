@@ -8,8 +8,8 @@ class PostagemServices {
         setDados(resposta.data);
     }
 
-    cadastrarPostagem = async(url: string,postagem: Postagem, setDados: Function, header: Object) => {
-        const resposta = await baseApi.post(url, postagem, header);
+    cadastrarPostagem = async(url: string, dados: Object, setDados: Function, header: Object) => {
+        const resposta = await baseApi.post(url, dados, header);
         setDados(resposta.data);
     }
 

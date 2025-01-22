@@ -140,7 +140,7 @@ const FormPostagem = () => {
         retornar()
     }
 
-    const carregandoTema = tema.descricao === '';
+    // const carregandoTema = tema.descricao === '';
 
     return (
         <section className="container flex flex-col mx-auto items-center">
@@ -192,7 +192,7 @@ const FormPostagem = () => {
                     type='submit'
                     className='rounded disabled:bg-slate-200 bg-sky-400 hover:bg-sky-800
                                text-white font-bold w-1/2 mx-auto py-2 flex justify-center'
-                    disabled={carregandoTema}
+                    // disabled={carregandoTema}
                 >
                     {isLoading ?
                         <RotatingLines

@@ -5,12 +5,12 @@ interface CardPostagensProps {
     postagem: Postagem;
 }
 
-const CardPostagens = ({postagem }: CardPostagensProps) => {
+const CardPostagens = ({ postagem }: CardPostagensProps) => {
     return (
         <section className='border-slate-900 border 
             flex flex-col rounded overflow-hidden justify-between'>
-                
-                <div>
+
+            <div>
                 <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
                     <img
                         src={postagem.usuario?.foto}
@@ -31,12 +31,11 @@ const CardPostagens = ({postagem }: CardPostagensProps) => {
                 </div>
             </div>
             <div className="flex">
-                <Link to='' 
-                    className='w-full text-white bg-indigo-400 
-                    hover:bg-indigo-800 flex items-center justify-center py-2'>
+                <Link to={`/editarpostagem/${postagem.id}`}
+                    className='w-full text-slate-100 bg-sky-400 hover:bg-sky-800 flex items-center justify-center py-2'>
                     <button>Editar</button>
                 </Link>
-                <Link to='' 
+                <Link to=''
                     className='text-white bg-red-400 
                     hover:bg-red-700 w-full flex items-center justify-center'>
                     <button>Deletar</button>
