@@ -21,9 +21,9 @@ const Navbar = () => {
                     <h1><Link to="/home">Blog Pessoal - Rudr1gu</Link> <i className='bx bx-code-alt'></i></h1>
                     <div>
                         <ul className="flex gap-5">
-                            <li><a href="#" className="links-nav">
+                            <li><Link to="/postagens" className="links-nav">
                                     <i className='bx bxs-notepad'></i> Postagens
-                                </a>
+                                </Link>
                             </li>
                             <li><Link to="/tema" className="links-nav ">
                                     <i className='bx bxs-comment-detail'></i> Temas

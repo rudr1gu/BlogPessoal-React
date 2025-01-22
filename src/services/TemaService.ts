@@ -18,7 +18,7 @@ class TemaService {
         setDados(resposta.data)
     }
 
-    delatarTema = async (url: string, header: Object) => {
+    deletarTema = async (url: string, header: Object) => {
         await baseApi.delete(url, header)
     }
 }

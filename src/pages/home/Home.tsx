@@ -1,4 +1,5 @@
-// import React from "react";
+import ListaPostagens from "../../components/postagens/listapostagens/ListaPostagens"
+import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostagem";
 
 const Home = () => {
     return (
@@ -14,10 +15,8 @@ const Home = () => {
                         </p>
 
                         <div className="flex justify-around gap-4">
-                            <div className='rounded text-white 
-                                        border-white border-solid border-2 py-2 px-4'
-                            >
-                                Nova Postagem
+                            <div className="flex justify-around gap-4">
+                                <ModalPostagem />
                             </div>
                         </div>
                     </div>
@@ -31,6 +30,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+            <ListaPostagens />
         </>
     );
 };
