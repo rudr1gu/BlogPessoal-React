@@ -33,9 +33,9 @@ const Navbar = () => {
                                     <i className='bx bxs-comment-add'></i> Cadastrar Tema
                             </Link>
                             </li>
-                            <li><a href="#" className="links-nav ">
+                            <li><Link to="/perfil" className="links-nav ">
                                     <i className='bx bxs-user-rectangle' ></i> Perfil
-                                </a>
+                                </Link>
                             </li>
                             <li><Link to='' onClick={logout} className="links-nav logout">
                                     <i className='bx bxs-log-out-circle'></i> Sair
