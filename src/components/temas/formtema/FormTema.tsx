@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Tema from "../../../models/Tema";
 import TemaService from "../../../services/TemaService";
+import ToastAlerta from "../../../utils/ToastAlerta";
 
 
 function FormTema() {
@@ -33,7 +34,7 @@ function FormTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            ToastAlerta('Você precisa estar logado', 'info');
             navigate('/')
         }
     }, [token])
@@ -69,7 +70,7 @@ function FormTema() {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    alert('Erro ao atualizar o tema.')
+                    ToastAlerta('Erro ao atualizar o tema.', 'error')
                 }
 
             }
@@ -78,12 +79,12 @@ function FormTema() {
                 await temaService.cadastrarTema(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 })
-                alert('O Tema foi cadastrado com sucesso!')
+                ToastAlerta('Tema cadastrado com sucesso', 'success')
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    alert('Erro ao cadastrar o tema.')
+                    ToastAlerta('Erro ao cadastrar o tema.', 'error')
                 }
 
             }

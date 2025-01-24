@@ -4,6 +4,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 import Usuario from '../../models/Usuario';
 import UsuarioServices from '../../services/UsuarioServices';
 import { RotatingLines } from 'react-loader-spinner';
+import ToastAlerta from '../../utils/ToastAlerta';
 
 
 const Cadastrar = () => {
@@ -50,12 +51,12 @@ const Cadastrar = () => {
 
             try {
                 await usuarioServices.cadastrarUsuario('/usuarios/cadastrar', usuario, setUsuario)
-                alert('Usuário cadastrado com sucesso!')
+                ToastAlerta('Usuário cadastrado com sucesso!', 'success')
             } catch (error) {
-                alert('Erro ao cadastrar usuário!')
+                ToastAlerta('Erro ao cadastrar usuário!', 'error')
             }
         } else {
-            alert('Senhas não conferem ou senha menor que 8 caracteres!')
+            ToastAlerta('Senhas não conferem ou senha menor que 8 caracteres!', 'error')
             setUsuario({ ...usuario, senha: '' })
             setConfirmarSenha('')
         }
