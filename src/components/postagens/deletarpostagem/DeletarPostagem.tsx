@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext"
 import Postagem from "../../../models/Postagem"
 import { RotatingLines } from "react-loader-spinner"
 import PostagemServices from "../../../services/PostagemServices"
+import ToastAlerta from "../../../utils/ToastAlerta"
 
 function DeletarPostagem() {
 
@@ -34,7 +35,7 @@ function DeletarPostagem() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            ToastAlerta('Você precisa estar logado', 'error')
             navigate('/')
         }
     }, [token])
@@ -55,13 +56,13 @@ function DeletarPostagem() {
                 }
             })
 
-            alert('Postagem apagada com sucesso')
+            ToastAlerta('Postagem apagada com sucesso', 'success')
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()
             }else {
-                alert('Erro ao deletar a postagem.')
+                ToastAlerta('Erro ao deletar a postagem', 'error')
             }
         }
 
